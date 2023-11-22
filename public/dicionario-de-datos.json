@@ -1,0 +1,50 @@
+{
+  "EMPRESAS": [
+    {
+      "ID_EMPRESA": 1,
+      "NOMBRE_EMPRESA": "Grupo Dinámico Alfa",
+      "AREAS": [
+        {"ID_AREA": "A1", "NOMBRE_AREA": "Finanzas"},
+        {"ID_AREA": "A2", "NOMBRE_AREA": "Marketing"},
+        {"ID_AREA": "A3", "NOMBRE_AREA": "Operaciones"},
+        {"ID_AREA": "A4", "NOMBRE_AREA": "RRHH"}
+      ]
+    },
+    {
+      "ID_EMPRESA": 2,
+      "NOMBRE_EMPRESA": "Soluciones Innovadoras Gamma",
+      "AREAS": [
+        {"ID_AREA": "A1", "NOMBRE_AREA": "Recursos Humanos"},
+        {"ID_AREA": "A2", "NOMBRE_AREA": "IT"},
+        {"ID_AREA": "A3", "NOMBRE_AREA": "Legal"},
+        {"ID_AREA": "A4", "NOMBRE_AREA": "Comunicaciones"}
+      ]
+    },
+    {
+      "ID_EMPRESA": 3,
+      "NOMBRE_EMPRESA": "Tecnologías Avanzadas Omega",
+      "AREAS": [
+        {"ID_AREA": "A1", "NOMBRE_AREA": "Investigación y Desarrollo"},
+        {"ID_AREA": "A2", "NOMBRE_AREA": "Ventas"},
+        {"ID_AREA": "A3", "NOMBRE_AREA": "Atención al Cliente"},
+        {"ID_AREA": "A4", "NOMBRE_AREA": "Logística"}
+      ]
+    },
+    {
+      "ID_EMPRESA": 4,
+      "NOMBRE_EMPRESA": "Conexiones Estratégicas Beta",
+      "AREAS": [
+        {"ID_AREA": "A1", "NOMBRE_AREA": "Desarrollo de Producto"},
+        {"ID_AREA": "A2", "NOMBRE_AREA": "Servicio al Cliente"}
+      ]
+    },
+    {
+      "ID_EMPRESA": 5,
+      "NOMBRE_EMPRESA": "Visión Global Zeta",
+      "AREAS": [
+        {"ID_AREA": "A1", "NOMBRE_AREA": "Investigación de Mercado"},
+        {"ID_AREA": "A2", "NOMBRE_AREA": "Publicidad"}
+      ]
+    }
+  ]
+}
