@@ -1,5 +1,6 @@
 import React from "react";
 import { CompanyContext } from "./CompanyContext";
+import Swal from "sweetalert2";
 
 export const EmployeeContext = React.createContext({});
 
@@ -60,7 +61,11 @@ const EmployeeProvider = (props) => {
 
     // Check if all required columns are present
     if (!expectedColumns.every((col) => actualColumns.includes(col))) {
-      console.error("Invalid column structure in Excel file.");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El archivo seleccionado no tiene la estructura correcta y no se puede subir",
+      });
       return;
     }
 
@@ -125,7 +130,6 @@ const EmployeeProvider = (props) => {
 
       setEmployees(employeesWithNames);
       setEmployeesLoading(false);
-      console.log(employeesWithNames);
     }
   };
 

@@ -76,11 +76,11 @@ export default function UploadForm() {
 
     // The render logic checks if the file is loading or if there is an error. If so, it renders a loading message or an error message. If not, it renders the upload button.
 
-    if (loading) return <Typography component="div" variant="h4" sx={{color:"white", mx:4, px:4 }}>Loading...</Typography>;
+    if (loading) return <Typography component="div" variant="h4" sx={{color:"white", mx:4, px:4 }}>Cargando archivo...</Typography>;
     
     return (
         <Grid container justifyContent="center" alignContent="center">
-            <Container sx={{ width: "100%", height: "100%"}}>
+            <Container sx={{ width: "100%", height: "100%", pt:4}}>
                     <Input
                         type="file"
                         onChange={handleFileUpload}
