@@ -4,13 +4,13 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 
@@ -21,13 +21,17 @@ export default function AccordionPanel() {
   const { companies, companiesLoading } = React.useContext(CompanyContext);
   const { employees, employeesLoading } = React.useContext(EmployeeContext);
 
+  // The rendering logic first checks if the companies and employees are still loading and if so, it renders a loading message. If not, it renders the companies and employees data.
+  // Then is a nested map function that renders the companies and areas and then the employees for each area.
+
   return (
-    <Grid container justifyContent='center' alignItems='center'>
-    <Container sx={{ width: '100%', height: '100%', m: 2, pt: 4}}>
+    <Grid container justifyContent="center" alignItems="center">
+    <Container sx={{ width: "100%", height: "100%", m: 2, pt: 4}}>
       {companiesLoading || employeesLoading ? (
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Loading...
+        <Container sx={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1, color:"white" }}>
         </Typography>
+        </Container>
       ) : (
         companies.map((company) => (
             employees.some((employee) => employee.ID_EMPRESA === company.ID_EMPRESA) ? (
@@ -104,7 +108,7 @@ export default function AccordionPanel() {
                         </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-                            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>No hay empleados en esta área</Typography>
+                            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>No hay información de empleados en esta área</Typography>
                         </AccordionDetails>
                     </Accordion>
                 ))}
@@ -121,7 +125,7 @@ export default function AccordionPanel() {
             </Typography>
             </AccordionSummary>
             <AccordionDetails>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>No hay empleados en esta empresa</Typography>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>No hay información de empleados en esta empresa</Typography>
             </AccordionDetails>
             </Accordion>))
       )}
