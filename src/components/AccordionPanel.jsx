@@ -11,6 +11,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
 
 import { CompanyContext } from "../context/CompanyContext";
 import { EmployeeContext } from "../context/EmployeeContext";
@@ -20,7 +22,8 @@ export default function AccordionPanel() {
   const { employees, employeesLoading } = React.useContext(EmployeeContext);
 
   return (
-    <div>
+    <Grid container justifyContent='center' alignItems='center'>
+    <Container sx={{ width: '100%', height: '100%', m: 2, pt: 4}}>
       {companiesLoading || employeesLoading ? (
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Loading...
@@ -52,15 +55,18 @@ export default function AccordionPanel() {
                         </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
+
                             <TableContainer component={Paper}>
+                            <Grid container>
+                                <Grid item xs={12}>
                                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                                     <TableHead>
                                     <TableRow>
                                         <TableCell>Nombre</TableCell>
-                                        <TableCell align="right">Rut</TableCell>
-                                        <TableCell align="right">Edad</TableCell>
-                                        <TableCell align="right">Profesión</TableCell>
-                                        <TableCell align="right">Cargo</TableCell>
+                                        <TableCell>Rut</TableCell>
+                                        <TableCell>Edad</TableCell>
+                                        <TableCell>Profesión</TableCell>
+                                        <TableCell>Cargo</TableCell>
                                     </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -72,15 +78,18 @@ export default function AccordionPanel() {
                                         <TableCell component="th" scope="row">
                                             {employee.NOMBRE_TRABAJADOR}
                                         </TableCell>
-                                        <TableCell align="right">{employee.RUT_TRABAJADOR}</TableCell>
-                                        <TableCell align="right">{employee.EDAD}</TableCell>
-                                        <TableCell align="right">{employee.PROFESION}</TableCell>
-                                        <TableCell align="right">{employee.CARGO}</TableCell>
+                                        <TableCell>{employee.RUT_TRABAJADOR}</TableCell>
+                                        <TableCell>{employee.EDAD}</TableCell>
+                                        <TableCell>{employee.PROFESION}</TableCell>
+                                        <TableCell>{employee.CARGO}</TableCell>
                                         </TableRow>
                                     ))}
                                     </TableBody>
                                 </Table>
+                                </Grid>
+                            </Grid>
                             </TableContainer>
+
                         </AccordionDetails>
                     </Accordion>
                     ) : 
@@ -116,6 +125,7 @@ export default function AccordionPanel() {
             </AccordionDetails>
             </Accordion>))
       )}
-    </div>
+    </Container>
+    </Grid>
   );
 }
