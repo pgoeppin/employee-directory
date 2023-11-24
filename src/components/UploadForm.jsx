@@ -57,7 +57,6 @@ export default function UploadForm() {
                 const sheetName = xl.SheetNames[0];
                 const sheet = xl.Sheets[sheetName];
                 const data = XLSX.utils.sheet_to_json(sheet);
-                console.log(data)
                 uploadData(data);
             } catch (error) {
                 console.log(error);
@@ -66,7 +65,7 @@ export default function UploadForm() {
             }
         }
         readFile();
-    }, [file]);
+    }, [file, uploadData]);
 
     const handleClick = () => {
         if (inputRef.current) {

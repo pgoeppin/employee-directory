@@ -44,9 +44,8 @@ const EmployeeProvider = (props) => {
       );
     };
 
-  // function to upload data from excel file
-
-  const uploadData = (parsedData) => {
+  // function to upload data from excel file using useCallback to avoid infinite loop when using useEffect in UploadForm.jsx to call this function when the file state changes
+  const uploadData = React.useCallback((parsedData) => {
     // Validate column structure
     const expectedColumns = [
       "ID_EMPRESA",
@@ -131,7 +130,7 @@ const EmployeeProvider = (props) => {
       setEmployees(employeesWithNames);
       setEmployeesLoading(false);
     }
-  };
+  }, [companies, companiesLoading, setEmployees, setEmployeesLoading]);
 
   return (
     <EmployeeContext.Provider
